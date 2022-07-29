@@ -10,6 +10,6 @@ Examples:
 
 function opposite(number) {
     //your code here
-    //return the inverse of the number inputed, reversing it by multiplying by -1
+    //Return the inverse of the number inputed, reversing it by multiplying by -1
     return number*-1
 }
