@@ -4,4 +4,4 @@ function boolToWord( bool ){
     //...
     //If bool is truthy, return "Yes". If falsy, return "No"
     return bool ? "Yes" : "No"
-  }
+}
