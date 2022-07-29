@@ -10,7 +10,7 @@ Examples (input --> output):
 */
 
 function numberToString(num) {
-    // Return a string of the number here!
+    //Return a string of the number here!
     //Using the String constructor, pass num as string
     return String(num)
   }
