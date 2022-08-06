@@ -12,4 +12,4 @@ function greet (name, owner) {
     // Add code here
     //Check if owner = name, and print the correct string
     return name === owner ? "Hello boss" : "Hello guest"
-  }
+}
