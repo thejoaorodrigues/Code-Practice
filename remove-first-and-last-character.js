@@ -22,7 +22,7 @@ function array(arr){
     arr = arr.split(',')
     //If array has two elements
     if(arr.length <= 2){
-        //Return null
+        //Return null as asked
         return null
     } else {
         //Declare variables to remove the first and last elements
