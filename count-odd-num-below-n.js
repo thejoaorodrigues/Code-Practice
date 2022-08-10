@@ -8,14 +8,6 @@ Expect large Inputs!
 */
 
 function oddCount(n){
-    // your code here
-    //Declare variable to hold the number count
-    let numbers = 0
-    //Initialize descending for loop, starting at n-1 (current number doesn't count)
-    for(i=n-1; i>0; i -= 2){
-        //Increment number
-        numbers ++
-    }
-    //Return numbers
-    return numbers
+    //Return half the numbers between 0 and n
+    return Math.floor(n/2)
 }
