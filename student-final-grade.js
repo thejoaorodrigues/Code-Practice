@@ -26,7 +26,7 @@ Examples(Inputs-->Output):
 function finalGrade (exam, projects) {
     //final grade
     //Check conditional
-    if(exam > 90 && projects > 10){
+    if(exam > 90 || projects > 10){
         //Return grade
         return 100
     } else if (exam > 75 && projects >= 5){
