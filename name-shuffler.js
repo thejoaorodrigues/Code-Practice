@@ -8,6 +8,6 @@ Example(Input --> Output)
 
 function nameShuffler(str){
     //Shuffle It
-    //Pass to string the words, reverse array, and join them with space
+    //Pass to string the words, reverse array, and join them with space '_' 
     return str.split(' ').reverse().join(' ')
 }
