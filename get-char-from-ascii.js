@@ -11,9 +11,9 @@ For ASCII table, you can refer to http://www.asciitable.com/
 */
 
 function getChar(c){
-    // ...
-    //Declare variable to hold the car code 
-    let char = String.fromCharCode(c);
-    //Return the char
-    return char
-  }
+  // ...
+  //Declare variable to hold the car code 
+  let char = String.fromCharCode(c);
+  //Return the char
+  return char
+}
