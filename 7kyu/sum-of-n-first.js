@@ -34,7 +34,6 @@ function SeriesSum(n){
             //And increment the base for the next calculation
             base += 3
         } 
-  
     }
         //Return the number with 2 decimal places, and in string format
         return Number(result).toFixed(2).toString()
