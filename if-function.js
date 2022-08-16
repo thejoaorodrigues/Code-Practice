@@ -12,4 +12,4 @@ function _if(bool, func1, func2) {
     //...
     //If true, func1 () else, func2 is called
     return bool ? func1() : func2();
-  }
+}
