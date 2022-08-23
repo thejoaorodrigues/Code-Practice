@@ -12,13 +12,13 @@ Our deck (is preloaded):
 function defineSuit(card) {
     // good luck
     //Check condition for suit of card
-    if(card[1] === '♣'){
-      return 'clubs'
-    } else if (card[1] === '♠'){
-      return 'spades'
-    } else if (card[1] === '♦'){
-      return 'diamonds'
-    } else if (card[1] === '♥'){
-      return 'hearts'
+    if(card.slice(-1) === '♣'){
+        return 'clubs'
+      } else if (card.slice(-1) === '♠'){
+        return 'spades'
+      } else if (card.slice(-1) === '♦'){
+        return 'diamonds'
+      } else if (card.slice(-1) === '♥'){
+        return 'hearts'
+      }
     }
-  }
