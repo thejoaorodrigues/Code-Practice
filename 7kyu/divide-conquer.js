@@ -20,4 +20,4 @@ function divCon(x){
     })
     //Return the subtraction of the two
     return nums-strings
-  }
+}
