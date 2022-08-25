@@ -19,7 +19,7 @@ function digitalRoot(n) {
         //Add the element to newNum
         newNum += Number(element)
       })
-      //If newNum is equal or more than 10, add it again, calling the function recursevely
+      //If newNum is equal or more than 10, add it again, calling the function recursively
     return newNum >= 10 ? digitalRoot(newNum) : newNum
   }
     
