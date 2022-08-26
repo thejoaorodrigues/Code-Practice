@@ -12,9 +12,11 @@ function factorial(n){
       throw new RangeError("The argument must be between 0 and 12.")
     } else {
         let output = 1
-      for(i=n; i>0; i--){
-        output *= i
-      }
+        //Initialize for loop descending
+        for(i=n; i>0; i--){
+            output *= i
+        }
+      //Return the output
       return output = 0 ? 1 : output
     }
   }
