@@ -21,3 +21,20 @@ Note that 121 has twice the digit 1.
 
 */
 
+function nbDig(n, d) {
+    // your code
+  let nums = []
+  for(i=0; i<=n; i++){
+    nums.push(Math.pow(i, 2).toString().split(''))
+  }
+  console.log(nums)
+  let counter = 0
+  nums.forEach(element => {
+    for(i=0; i<element.length; i++){
+      if(element[i] === d.toString()){
+        counter++
+      }
+    }
+  })
+  return counter
+}
