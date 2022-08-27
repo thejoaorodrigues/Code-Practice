@@ -16,7 +16,6 @@ function remove (string) {
     string = string.split('')
     let output = ''
     string.forEach(element => {
-      console.log(element)
         if(element !== '!'){
           output += element
         }
