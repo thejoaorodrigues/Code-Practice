@@ -29,4 +29,4 @@ function isSameLanguage(list) {
         //Has the same language, return true
       return element.language === languageChosen
     })
-  }
+}
