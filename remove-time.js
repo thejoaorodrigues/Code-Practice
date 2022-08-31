@@ -14,4 +14,4 @@ function shortenToDate(longDate) {
     // your code here
     longDate = longDate.split(' ')
     return [longDate[0], longDate[1], longDate[2].replace(',', '')].join(' ')
-  }
+}
