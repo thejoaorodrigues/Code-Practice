@@ -33,4 +33,4 @@ function high(x){
     
     // 4. return the string of the highest score index of wordList
     return wordList[highestIndex];
-  }
+}
