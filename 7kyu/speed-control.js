@@ -21,18 +21,23 @@ With floats it can happen that results depends on the operations order. To calcu
 
  function gps(s, x) {
     // your code
-  console.log(s, x)
+  //If array is less than two elements
   if(x.length < 2){
+    //Return 0
     return 0
+    //Else, if its valid
   } else {
+    //let maxSpedd be the difference of the first two elements
       let maxSpeed = x[1]-x[0]
+      //Initialize for loop and
   for(i=0; i<x.length; i++){
+    //If the diff of elements is bigger than maxspedd
     if(x[i+1]-x[i] > maxSpeed){
+        //Reassign the variable
       maxSpeed = x[i+1]-x[i]
-      console.log(maxSpeed)
     }
   }
-  console.log(Math.floor((3600*maxSpeed)/s))
+  //Return the right calculation
   return Math.floor((3600*maxSpeed)/s)
   }
 }
