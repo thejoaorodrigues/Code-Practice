@@ -10,3 +10,12 @@ If there are less than 2 blue beads return 0.
 
 */
 
+function countRedBeads(n) {
+    //your code here
+    if(n < 2){
+      return 0
+    } else {
+      console.log(2*n-2)
+      return 2*n-2
+    }
+  }
