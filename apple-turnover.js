@@ -20,4 +20,4 @@ Note: Input will either be a positive integer (or a string for untyped languages
 function apple(x){
     //Ternary operator to decide
     return x*x >= 1000 ? "It's hotter than the sun!!" : "Help yourself to a honeycomb Yorkie for the glovebox."
-  }
+}
