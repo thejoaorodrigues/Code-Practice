@@ -22,4 +22,3 @@ function addLength(str) {
     //Return the array
     return str
 }
-  
