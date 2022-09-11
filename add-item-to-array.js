@@ -8,4 +8,5 @@ var websites = [];
 */
 
 // add the value "codewars" to the already defined websites array
+//And return the value
 websites.push('codewars')
