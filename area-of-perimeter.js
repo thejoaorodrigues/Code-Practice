@@ -13,4 +13,4 @@ const areaOrPerimeter = function(l , w) {
     // Return your answer
     //If w === l, its a perimeter of square. Else, sum all sides
     return l == w ? l*w : 2*(l + w)
-  };
+};
