@@ -25,4 +25,7 @@ Example:
 potatoes(99, 100, 98) --> 50
 */
 
-return Math.floor(w0 * (100 - p0) / (100 - p1))
+function potatoes(p0, w0, p1) {
+    // your code
+  return Math.floor(w0 * (100 - p0) / (100 - p1))
+}
