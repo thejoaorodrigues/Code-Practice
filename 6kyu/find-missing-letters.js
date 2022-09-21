@@ -21,3 +21,11 @@ I have also created other katas. Take a look if you enjoyed this kata!
 
 */
 
+function findMissingLetter(array){
+    let first = array[0].charCodeAt(0)
+    for(i=0; i<array.length; i++){
+      if(first + i !== array[i].charCodeAt(0)){
+        return String.fromCharCode(first+i)
+      }
+    }
+  }
