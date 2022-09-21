@@ -17,3 +17,11 @@ An array (guaranteed non-associative in PHP) representing the genders of the att
 true if Arthur need to invite more women, false otherwise.
 */
 
+function inviteMoreWomen(L) {
+    //coding and coding..
+    console.log(L)
+    let result = L.reduce((acc, val) => {
+      return acc + val
+    }, 0)
+    return result > 0
+  }
