@@ -11,3 +11,15 @@ findNb(1071225) --> 45
 findNb(91716553919377) --> -1
 */
 
+function findNb(m) {
+    // your code
+    let total = 0
+    let n = 0
+    
+    while (total < m){
+      n++
+      total+= Math.pow(n, 3)
+    }
+  
+  return total === m ? n : -1
+}
