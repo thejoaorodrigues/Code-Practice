@@ -23,3 +23,14 @@ Depending on the cumulative score of the team, return the appropriate sentiment:
 100 or over: 'party time!!'
 */
 
+function boredom(staff){
+    const departments = {'accounts':1, 'finance':2, 'canteen':10, 'regulation':3, 'trading':6, 'change':6, 'IS':8, 'retail':5, 'cleaning':4, 'pissing about':25}
+    var total = 0
+        for(var key in staff){
+        total+=departments[staff[key]]
+      }
+    if(total <= 80) return 'kill me now'
+    else if(total < 100) return 'i can handle this'
+    else return 'party time!!'
+  }
+  
