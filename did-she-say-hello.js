@@ -20,3 +20,4 @@ to keep this a beginner exercise you don't need to check if the greeting is a su
 function should be case insensitive to pass the tests
 */
 
+const validateHello = greetings => /h[ae]llo|ciao|salut|hola|ahoj|czesc/i.test(greetings);
