@@ -28,4 +28,4 @@ function lastSurvivor(letters, coords) {
     }
     //Return the final letter
     return letters.join('')
-  }
+}
