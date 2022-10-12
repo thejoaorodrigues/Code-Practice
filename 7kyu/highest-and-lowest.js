@@ -19,4 +19,4 @@ function highAndLow(numbers){
     let highLow = [numbers[numbers.length-1], numbers[0]]
     //Join highLow as a string
     return highLow.join(' ')
-  }
+}
