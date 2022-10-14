@@ -12,4 +12,4 @@ arrayDiff([1,2,2,2,3],[2]) == [1,3]
 function array_diff(a, b) {
     //Filters the array a and returns the elements that are not in b
     return a.filter(element => !b.includes(element));
-  }
+}
