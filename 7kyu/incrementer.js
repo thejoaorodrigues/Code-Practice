@@ -23,6 +23,7 @@ nums.forEach((element, index) => {
     output[index] = +output[index].toString().slice(-1)
     }
 })
+
 console.log(output)
     return output
 }
