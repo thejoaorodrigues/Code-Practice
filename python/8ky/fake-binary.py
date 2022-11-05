@@ -12,3 +12,6 @@ def fake_bin(x):
         else:
             output += '1'
     return output
+
+def fake_bin(x):
+    return ''.join('0' if bit < '5' else '1' for bit in x)
