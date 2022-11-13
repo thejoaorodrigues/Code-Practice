@@ -24,4 +24,3 @@ def get_grade(s1, s2, s3):
         return 'B'
     else:
         return 'A'
-    
