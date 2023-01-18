@@ -37,6 +37,7 @@ Good luck!
 After you complete this kata, you may try yourself at Decode the Morse code, advanced
 '''
 
+#import Morse code from external module
 from preloaded import MORSE_CODE
 
 def decodeMorse(morse_code):
