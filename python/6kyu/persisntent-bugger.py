@@ -8,7 +8,7 @@ For example (Input --> Output):
 4 --> 0 (because 4 is already a one-digit number)
 '''
 
-#Implementation
+
 def persistence(n):
     n = str(n)
     count = 0
