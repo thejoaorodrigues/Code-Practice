@@ -12,4 +12,6 @@ function maps(x){
     output.push(x[i] * 2)
   }
   return output
+
+  //return x.map(n => n * 2);
 }
