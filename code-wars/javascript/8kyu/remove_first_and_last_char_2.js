@@ -23,4 +23,4 @@ function array(string) {
     output.pop()
     output.shift()
     return output == '' ? null : output.join(' ')
-  }
+}
