@@ -23,4 +23,4 @@ function stringy(size) {
       }
     }
     return output
-  }
+}
