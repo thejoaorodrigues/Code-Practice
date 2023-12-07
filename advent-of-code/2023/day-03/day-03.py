@@ -3,9 +3,13 @@ lines = open('inputs.txt', 'r').readlines() # Open file inputs.txt and separate 
 engine = [] # create engine blueprint, to store every char
 partPositions = []
 partNumbers = []
-
 output = 0 # Initialize the output to 0
 symbols = [] # Initialize a symbols list to retrieve the symbols
+
+#### PART 2 ####
+symbol = ['*']
+output2 = 0
+partNumbers2 = []
 
 for line in lines: # for each line of the document
     buffer = [] # create a buffer for every character in the engine
@@ -24,7 +28,7 @@ for line in lines: # for each line of the document
 symbols.remove('\n')
 symbols.remove('.')
 
-def getNumber(table, dx, dy):
+def getNumber(table, dx, dy, origin):
     if table[dx][dy].isnumeric():
         # TRAIL BACKWARDS TILL THERE'S NO NUMBERS LEFT (OR BEGGINING OF ENGINE BLUEPRINT LINE) AND THEN TO THE END OF THE NUMBER
         partPosition = [] # to track the part position in the blueprint
@@ -51,22 +55,58 @@ def getNumber(table, dx, dy):
         if partPosition not in partPositions: # If the current part position is not already in the list (values can be duplicated, but positions dont)
             partPositions.append(partPosition) # Add the position to the list
             partNumbers.append(partValue) # Add the part number to the list
+            partNumbers2.append([origin, partValue]) # Add the part number to the list
+
+        return True
+
+# for i in range(len(engine)):
+#     for j in range(len(engine[i])):
+#         coords = [[i-1, j-1], [i-1, j], [i-1, j+1], [i, j-1], [i, j+1], [i+1, j-1], [i+1, j], [i+1, j+1]]
+#         if engine[i][j] in symbols: # If a symbol is encountered
+#             # LOOK FOR VALUES AROUND IT
+#             for coord in coords:
+#                 getNumber(engine, coord[0], coord[1], False) # [i-1][j-1]
+
+# for part in partNumbers: # For every part in the partNumbers list
+#     output += int(part) # Add its value to the output  
+
+# print(output) # Print, or return, the output
+
+################### PART 2 ########################################
+
+partPositions = []
+partNumbers = []
 
 for i in range(len(engine)):
     for j in range(len(engine[i])):
-        if engine[i][j] in symbols: # If a symbol is encountered
+        coords = [[i-1, j-1], [i-1, j], [i-1, j+1], [i, j-1], [i, j+1], [i+1, j-1], [i+1, j], [i+1, j+1]]
+        if engine[i][j] in symbol: # If a * is encountered
+            point = (i, j)
             # LOOK FOR VALUES AROUND IT
-            getNumber(engine, i-1, j-1) # [i-1][j-1]          
-            getNumber(engine, i-1, j) # [i-1][j]           
-            getNumber(engine, i-1, j+1) # [i-1][j+1]        
-            getNumber(engine, i, j-1) # [i][j-1]         
-            getNumber(engine, i, j+1) # [i][j+1]          
-            getNumber(engine, i+1, j-1) # [i+1][j-1]          
-            getNumber(engine, i+1, j) # [i+1][j]
-            getNumber(engine, i+1, j+1) # [i+1][j+1]
+            for coord in coords:
+                getNumber(engine, coord[0], coord[1], point) # [i-1][j-1]
+            adjCounter = 0
 
 
-for part in partNumbers: # For every part in the partNumbers list
-    output += int(part) # Add its value to the output  
+# print()
+# print(partPositions)
+# print(partNumbers)
+# print(output2)
 
-print(output) # Print, or return, the output
+buffer = []
+
+for part in partNumbers2:
+    if [part[0]] not in buffer:
+        buffer.append([part[0]])
+
+for part in partNumbers2:
+    for buf in buffer:
+        if buf[0] == part[0]:
+            buf.append(part[1])
+
+for buf in buffer:
+    if len(buf) == 3:
+        print(buf[-2:])
+        output2 += (int(buf[-1]) * int(buf[-2]))
+
+print(output2)
