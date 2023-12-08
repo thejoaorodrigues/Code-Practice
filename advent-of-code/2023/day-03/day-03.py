@@ -1,15 +1,15 @@
 lines = open('inputs.txt', 'r').readlines() # Open file inputs.txt and separate content by lines 
 
 engine = [] # create engine blueprint, to store every char
-partPositions = []
-partNumbers = []
+partPositions = [] # Initialize the part positions list
+partNumbers = [] # Initialize the part numbers list
 output = 0 # Initialize the output to 0
 symbols = [] # Initialize a symbols list to retrieve the symbols
 
 #### PART 2 ####
-symbol = ['*']
-output2 = 0
-partNumbers2 = []
+symbol = ['*'] # Initialize a list for a gear single gear symbol
+output2 = 0 # Initialize the output to 0
+partNumbers2 = []  # Initialize a second part numbers list
 
 for line in lines: # for each line of the document
     buffer = [] # create a buffer for every character in the engine
@@ -55,27 +55,28 @@ def getNumber(table, dx, dy, origin):
         if partPosition not in partPositions: # If the current part position is not already in the list (values can be duplicated, but positions dont)
             partPositions.append(partPosition) # Add the position to the list
             partNumbers.append(partValue) # Add the part number to the list
-            partNumbers2.append([origin, partValue]) # Add the part number to the list
+            partNumbers2.append([origin, partValue]) # Add the part number to the second part number list, with the origin point
 
-        return True
+        return True # Return true
 
-# for i in range(len(engine)):
-#     for j in range(len(engine[i])):
-#         coords = [[i-1, j-1], [i-1, j], [i-1, j+1], [i, j-1], [i, j+1], [i+1, j-1], [i+1, j], [i+1, j+1]]
-#         if engine[i][j] in symbols: # If a symbol is encountered
-#             # LOOK FOR VALUES AROUND IT
-#             for coord in coords:
-#                 getNumber(engine, coord[0], coord[1], False) # [i-1][j-1]
+for i in range(len(engine)):
+    for j in range(len(engine[i])):
+        coords = [[i-1, j-1], [i-1, j], [i-1, j+1], [i, j-1], [i, j+1], [i+1, j-1], [i+1, j], [i+1, j+1]] # Iteration from surrounding coords
+        if engine[i][j] in symbols: # If a symbol is encountered
+            # LOOK FOR VALUES AROUND IT
+            for coord in coords:
+                getNumber(engine, coord[0], coord[1], False) # [i-1][j-1]
 
-# for part in partNumbers: # For every part in the partNumbers list
-#     output += int(part) # Add its value to the output  
+for part in partNumbers: # For every part in the partNumbers list
+    output += int(part) # Add its value to the output  
 
-# print(output) # Print, or return, the output
+print(output) # Print, or return, the output
 
 ################### PART 2 ########################################
 
-partPositions = []
-partNumbers = []
+partPositions = [] # Reinitialize the array
+partNumbers = [] # Reinitialize the array
+buffer = [] # initialize a buffer
 
 for i in range(len(engine)):
     for j in range(len(engine[i])):
@@ -87,26 +88,18 @@ for i in range(len(engine)):
                 getNumber(engine, coord[0], coord[1], point) # [i-1][j-1]
             adjCounter = 0
 
+# Three consecutive for loops
+for part in partNumbers2: # For each part in the part numbers list
+    if [part[0]] not in buffer: # If origin point of part not in the buffer
+        buffer.append([part[0]]) # Append the origin point
 
-# print()
-# print(partPositions)
-# print(partNumbers)
-# print(output2)
+for part in partNumbers2: # for each part
+    for buf in buffer: # For each origin point
+        if buf[0] == part[0]: # If part's original point is equal to the original point of the part
+            buf.append(part[1]) # append the part number
+ 
+for buf in buffer: # And finally
+    if len(buf) == 3: # If the current buf has a length of 3 (2 part numbers, with a single origin point)
+        output2 += (int(buf[-1]) * int(buf[-2])) # Add to the output the multiplication of the last two elements
 
-buffer = []
-
-for part in partNumbers2:
-    if [part[0]] not in buffer:
-        buffer.append([part[0]])
-
-for part in partNumbers2:
-    for buf in buffer:
-        if buf[0] == part[0]:
-            buf.append(part[1])
-
-for buf in buffer:
-    if len(buf) == 3:
-        print(buf[-2:])
-        output2 += (int(buf[-1]) * int(buf[-2]))
-
-print(output2)
+print(output2) # Print, or return, the output
